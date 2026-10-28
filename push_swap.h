@@ -6,7 +6,7 @@
 /*   By: acornia <acornia@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/27 12:29:01 by acornia           #+#    #+#             */
-/*   Updated: 2026/10/27 15:36:47 by acornia          ###   ########.fr       */
+/*   Updated: 2026/10/28 15:54:36 by acornia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,5 +42,13 @@ void	rrb(t_node **stack_b);
 void	rrr(t_node **stack_a, t_node **stack_b);
 /*Gestion de errores*/
 void	error(t_node *stack_a, char **split);
+void	free_stack(t_node *stack);
+void	free_split(char	**split);
+/*Indice de desordenacion*/
+float	disorder_index(t_node *stack);
+int		is_sorted(t_node *stack);
+/*Parseo*/
+int		parse_args(int argc, char **argv, t_node **stack);
+void	assign_index(t_node *stack_a);
 
 #endif

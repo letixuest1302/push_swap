@@ -6,13 +6,13 @@
 /*   By: acornia <acornia@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/27 13:20:04 by acornia           #+#    #+#             */
-/*   Updated: 2026/10/27 15:09:31 by acornia          ###   ########.fr       */
+/*   Updated: 2026/10/28 15:25:41 by acornia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	free_stack(t_node **stack)
+void	free_stack(t_node *stack)
 {
 	t_node	*tmp;
 
@@ -20,7 +20,7 @@ void	free_stack(t_node **stack)
 		return;
 	while (*stack)
 	{
-		tmp = *stack->next;
+		tmp = (*stack)->next;
 		free(*stack);
 		*stack = tmp;
 	}
@@ -34,7 +34,7 @@ void	free_split(char	**split)
 	if (!split)
 		return ;
 	i = 0;
-	while (split[i]);
+	while (split[i])
 	{
 		free(split[i]);
 		i++;
@@ -44,10 +44,10 @@ void	free_split(char	**split)
 
 void	error(t_node *stack_a, char **split)
 {
-	if (stack_a && *stacks_a)
+	if (stack_a && *stack_a)
 		free_stack(stack_a);
 	if (split)
 		free_split(split);
 	write (2, "Error\n", 6);
-	return (1);
+	return ;
 }

@@ -6,7 +6,7 @@
 /*   By: acornia <acornia@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/27 14:54:35 by acornia           #+#    #+#             */
-/*   Updated: 2026/10/27 15:16:21 by acornia          ###   ########.fr       */
+/*   Updated: 2026/10/28 15:25:43 by acornia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static int	process(char *str, t_node **stack)
 		return (0);
 	if (duplicate(*stack, (int)value))
 		return (0);
-	if (!add_back(stack, (int)value));
+	if (!add_back(stack, (int)value))
 		return (0);
 	return (1);
 }
@@ -42,7 +42,7 @@ static int	parse_array(char **split, t_node **stack)
 	return (1);
 }
 
-int	parse_arg(int argc, char **argv, t_node **stack)
+int	parse_args(int argc, char **argv, t_node **stack)
 {
 	char	**split;
 	int		start;

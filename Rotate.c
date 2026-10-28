@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acornia <acornia@student.42madrid.com>     +#+  +:+       +#+        */
+/*   By: lesainz <lesainz@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/27 11:40:11 by acornia           #+#    #+#             */
-/*   Updated: 2026/10/27 12:28:53 by acornia          ###   ########.fr       */
+/*   Updated: 2026/10/28 15:1:49 by lesainz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,10 @@ static void	rotate(t_node **stack)
 	t_node	*first;
 	t_node	*last;
 
+	if (!stack || !*stack || !(*stack)->next)
+		return ;
 	first = *stack;
-	*stack = *stack->next;
+	*stack = (*stack)->next;
 	last = *stack;
 	while (last->next != NULL)
 		last = last->next;

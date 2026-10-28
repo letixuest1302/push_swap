@@ -6,7 +6,7 @@
 /*   By: acornia <acornia@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/27 11:13:28 by acornia           #+#    #+#             */
-/*   Updated: 2026/10/27 14:06:44 by acornia          ###   ########.fr       */
+/*   Updated: 2026/10/28 15:25:43 by acornia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,19 +16,21 @@ void	pa(t_node **stack_b, t_node **stack_a)
 {
 	t_node	*node_to_move;
 
+	if (!stack_a || !stack_b)
+		return ;
 	node_to_move = *stack_b;
-	*stack_b = *stack_b->next;
+	*stack_b = (*stack_b)->next;
 	node_to_move->next = *stack_a;
 	*stack_a = node_to_move;
 	write(1, "pa\n", 1);
 }
 
-void	pb(t_node **stack_b, t_node **stack_b)
+void	pb(t_node **stack_a, t_node **stack_b)
 {
 	t_node	*node_to_move;
 
 	node_to_move = *stack_a;
-	*stack_a = *stack_a->next;
+	*stack_a = (*stack_a)->next;
 	node_to_move->next = *stack_b;
 	*stack_b = node_to_move;
 	write(1, "pb\n", 1);
