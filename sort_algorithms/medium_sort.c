@@ -6,7 +6,7 @@
 /*   By: acornia <acornia@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/29 12:58:05 by acornia           #+#    #+#             */
-/*   Updated: 2026/10/29 13:06:26 by acornia          ###   ########.fr       */
+/*   Updated: 2026/10/29 13:12:33 by acornia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,6 @@
 
 void	medium_sort(t_node **stack_a, t_node **stack_b)
 {
+	write(1, "Esto es medium\n", 15);
 	simple_sort(stack_a, stack_b);
 }

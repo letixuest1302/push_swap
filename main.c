@@ -6,7 +6,7 @@
 /*   By: acornia <acornia@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/26 11:43:36 by acornia           #+#    #+#             */
-/*   Updated: 2026/10/29 13:06:26 by acornia          ###   ########.fr       */
+/*   Updated: 2026/10/29 13:12:32 by acornia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ int	main(int argc, char **argv)
 		sort_stack(&stack_a, &stack_b, flag);
 	while (stack_a)
 	{
-		printf("%d", stack_a->value);
+		printf("%d\n", stack_a->value);
 		stack_a = stack_a->next;
 	}
 	free_stack(stack_a);
