@@ -6,7 +6,7 @@
 /*   By: acornia <acornia@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/27 11:52:15 by acornia           #+#    #+#             */
-/*   Updated: 2026/10/29 15:50:15 by acornia          ###   ########.fr       */
+/*   Updated: 2026/10/29 16:06:09 by acornia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,10 +46,15 @@ void	rrb(t_node **stack_b)
 
 void	rrr(t_node **stack_a, t_node **stack_b)
 {
-	if (reverserotate(stack_a) && reverserotate(stack_b))
+	int	done_a;
+	int	done_b;
+
+	done_a = reverserotate(stack_a);
+	done_b = reverserotate(stack_b);
+	if (done_a) && done_b
 		write(1, "rrr\n", 4);
-	else if (reverserotate(stack_a))
+	else if (done_a)
 		write(1, "rra\n", 4);
-	else if (reverserotate(stack_b))
+	else if (done_b)
 		write(1, "rrb\n", 4);
 }
