@@ -6,18 +6,20 @@
 /*   By: acornia <acornia@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/28 15:39:15 by acornia           #+#    #+#             */
-/*   Updated: 2026/10/29 11:50:49 by acornia          ###   ########.fr       */
+/*   Updated: 2026/10/29 13:06:26 by acornia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
+
+int	ft_strcmp(const char *flag, const char *str);
 
 static	void	adaptative(t_node **stack_a, t_node **stack_b)
 {
 	float	disorder;
 
 	disorder = disorder_index(*stack_a);
-	if (disoder < 0.2f)
+	if (disorder < 0.2f)
 		simple_sort(stack_a, stack_b);
 	else if (disorder < 0.5f)
 		medium_sort(stack_a, stack_b);
@@ -35,7 +37,7 @@ void	sort_stack(t_node **stack_a, t_node **stack_b, char *flag)
 		medium_sort(stack_a, stack_b);
 	else if (flag && ft_strcmp(flag, "--complex") == 0)
 		complex_sort(stack_a, stack_b);
-	else if (flag && ft_strcmp(flag, "--adaptative" == 0))
+	else if (flag && ft_strcmp(flag, "--adaptative") == 0)
 		adaptative(stack_a, stack_b);
 }
 

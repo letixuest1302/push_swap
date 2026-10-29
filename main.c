@@ -6,7 +6,7 @@
 /*   By: acornia <acornia@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/26 11:43:36 by acornia           #+#    #+#             */
-/*   Updated: 2026/10/29 12:09:41 by acornia          ###   ########.fr       */
+/*   Updated: 2026/10/29 13:06:26 by acornia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,8 @@ static int	handle_args(int argc, char **argv, t_node **stack, char **flag)
 	return (1);
 }
 
+#include <stdio.h>
+
 int	main(int argc, char **argv)
 {
 	t_node	*stack_a;
@@ -50,11 +52,16 @@ int	main(int argc, char **argv)
 	stack_b = NULL;
 	flag = NULL;
 	if (!handle_args(argc, argv, &stack_a, &flag))
-		return (error(&stack_a, NULL));
+		return (error(stack_a, NULL));
 	assign_index(stack_a);
 	if (!is_sorted(stack_a))
 		sort_stack(&stack_a, &stack_b, flag);
-	free_stack(&stack_a);
-	free_stack(&stack_b);
+	while (stack_a)
+	{
+		printf("%d", stack_a->value);
+		stack_a = stack_a->next;
+	}
+	free_stack(stack_a);
+	free_stack(stack_b);
 	return (0);
 }

@@ -6,11 +6,26 @@
 /*   By: acornia <acornia@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/29 11:43:55 by lesainz           #+#    #+#             */
-/*   Updated: 2026/10/29 12:10:08 by acornia          ###   ########.fr       */
+/*   Updated: 2026/10/29 13:06:26 by acornia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
+
+void	sort_three(t_node **stack_a);
+
+int	stack_size(t_node *stack)
+{
+	int	size;
+
+	size = 0;
+	while (stack)
+	{
+		size++;
+		stack = stack->next;
+	}
+	return (size);
+}
 
 static int	index_min_pos(t_node *stack)
 {
@@ -59,13 +74,18 @@ static void	min_to_top(t_node **stack_a)
 	}
 }
 
-void	sort_simple(t_node **stack_a, t_node **stack_b)
+void	simple_sort(t_node **stack_a, t_node **stack_b)
 {
 	int	size;
 
 	if (is_sorted(*stack_a))
 		return ;
 	size = stack_size(*stack_a);
+	if (size == 2)
+	{
+		sa(stack_a);
+		return ;
+	}
 	while (size > 3)
 	{
 		min_to_top(stack_a);
@@ -77,15 +97,30 @@ void	sort_simple(t_node **stack_a, t_node **stack_b)
 		pa(stack_a, stack_b);
 }
 
-int	stack_size(t_node *stack)
+void	sort_three(t_node **stack_a)
 {
-	int	size;
+	int	first;
+	int	second;
+	int	third;
 
-	size = 0;
-	while (stack)
+	first = (*stack_a)->index;
+	second = (*stack_a)->next->index;
+	third = (*stack_a)->next->next->index;
+
+	if (first > second && second < third && first < third)
+		sa(stack_a);
+	else if (first > second && second > third)
 	{
-		size++;
-		stack = stack->next;
+		sa(stack_a);
+		rra(stack_a);
 	}
-	return (size);
+	else if (first > second && second < third && first > third)
+		ra(stack_a);
+	else if (first < second && second > third && first < third)
+	{
+		sa(stack_a);
+		ra(stack_a);
+	}
+	else if (first < second && second > third && first > third)
+		rra(stack_a);
 }

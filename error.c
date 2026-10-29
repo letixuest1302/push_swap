@@ -6,7 +6,7 @@
 /*   By: acornia <acornia@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/27 13:20:04 by acornia           #+#    #+#             */
-/*   Updated: 2026/10/29 12:10:08 by acornia          ###   ########.fr       */
+/*   Updated: 2026/10/29 13:06:26 by acornia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,15 +16,15 @@ void	free_stack(t_node *stack)
 {
 	t_node	*tmp;
 
-	if (!stack || !*stack)
+	if (!stack)
 		return ;
-	while (*stack)
+	while (stack)
 	{
-		tmp = (*stack)->next;
-		free(*stack);
-		*stack = tmp;
+		tmp = (stack)->next;
+		free(stack);
+		stack = tmp;
 	}
-	*stack = NULL;
+	stack = NULL;
 }
 
 void	free_split(char	**split)
@@ -42,12 +42,12 @@ void	free_split(char	**split)
 	free(split);
 }
 
-void	error(t_node *stack_a, char **split)
+int	error(t_node *stack_a, char **split)
 {
-	if (stack_a && *stack_a)
+	if (stack_a)
 		free_stack(stack_a);
 	if (split)
 		free_split(split);
 	write (2, "Error\n", 6);
-	return ;
+	return (1);
 }

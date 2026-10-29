@@ -6,7 +6,7 @@
 /*   By: acornia <acornia@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/27 12:29:01 by acornia           #+#    #+#             */
-/*   Updated: 2026/10/28 16:41:39 by acornia          ###   ########.fr       */
+/*   Updated: 2026/10/29 13:06:25 by acornia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <limits.h>
-# include "split.h"
+# include "split/split.h"
 
 typedef struct s_node
 {
@@ -41,14 +41,24 @@ void	rra(t_node **stack_a);
 void	rrb(t_node **stack_b);
 void	rrr(t_node **stack_a, t_node **stack_b);
 /*Gestion de errores*/
-void	error(t_node *stack_a, char **split);
+int		error(t_node *stack_a, char **split);
 void	free_stack(t_node *stack);
 void	free_split(char	**split);
 /*Indice de desordenacion*/
 float	disorder_index(t_node *stack);
 int		is_sorted(t_node *stack);
 /*Parseo*/
-int		parse_args(int argc, char **argv, t_node **stack);
+int		parse_args(int argc, char **argv, int start, t_node **stack);
 void	assign_index(t_node *stack_a);
+/*Comprobacion de argumentos*/
+void	sort_stack(t_node **stack_a, t_node **stack_b, char *flag);
+int		numbers(char *str);
+long	ft_atol(const char *str);
+int		duplicate(t_node *stack, int n);
+int		add_back(t_node **stack, int n);
+/*Algoritmos de ordenacion*/
+void	simple_sort(t_node **stack_a, t_node **stack_b);
+void	medium_sort(t_node **stack_a, t_node **stack_b);
+void	complex_sort(t_node **stack_a, t_node **stack_b);
 
 #endif

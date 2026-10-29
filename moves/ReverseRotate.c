@@ -6,11 +6,11 @@
 /*   By: acornia <acornia@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/27 11:52:15 by acornia           #+#    #+#             */
-/*   Updated: 2026/10/27 12:26:49 by acornia          ###   ########.fr       */
+/*   Updated: 2026/10/29 13:06:26 by acornia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 static void	reverserotate(t_node **stack)
 {
