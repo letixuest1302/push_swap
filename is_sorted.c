@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort.c                                             :+:      :+:    :+:   */
+/*   is_sorted.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: acornia <acornia@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/10/28 15:15:46 by acornia           #+#    #+#             */
-/*   Updated: 2026/10/28 15:16:555 by acornia          ###   ########.fr       */
+/*   Created: 2026/10/29 11:52:31 by acornia           #+#    #+#             */
+/*   Updated: 2026/10/29 12:10:08 by acornia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ int	is_sorted(t_node *stack)
 	}
 	return (1);
 }
-//para manejar decimales. calcula el indice de ordenacion
 
 float	disorder_index(t_node *stack)
 {

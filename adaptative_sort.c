@@ -6,13 +6,13 @@
 /*   By: acornia <acornia@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/28 15:39:15 by acornia           #+#    #+#             */
-/*   Updated: 2026/10/29 10:14:56 by acornia          ###   ########.fr       */
+/*   Updated: 2026/10/29 11:50:49 by acornia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static	void	adaptativ(t_node **stack_a, t_node **stack_b)
+static	void	adaptative(t_node **stack_a, t_node **stack_b)
 {
 	float	disorder;
 

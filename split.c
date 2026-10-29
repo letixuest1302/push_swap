@@ -6,7 +6,7 @@
 /*   By: acornia <acornia@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/27 12:32:21 by acornia           #+#    #+#             */
-/*   Updated: 2026/10/27 16:28:49 by acornia          ###   ########.fr       */
+/*   Updated: 2026/10/29 12:10:08 by acornia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,5 +83,3 @@ char	**ft_split(char const *str, char c)
 		return (NULL);
 	return (fill_tab(tab, str, c));
 }
-
-./a.out "2 4 5 6 7 8"

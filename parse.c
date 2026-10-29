@@ -6,7 +6,7 @@
 /*   By: acornia <acornia@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/27 12:14:37 by lesainz           #+#    #+#             */
-/*   Updated: 2026/10/27 15:36:46 by acornia          ###   ########.fr       */
+/*   Updated: 2026/10/29 12:10:08 by acornia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,6 +87,7 @@ void	assign_index(t_node *stack_a)
 		current = current->next;
 	}
 }
+
 long	ft_atol(const char *str)
 {
 	long	sum;

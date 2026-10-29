@@ -6,7 +6,7 @@
 /*   By: acornia <acornia@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/27 14:54:35 by acornia           #+#    #+#             */
-/*   Updated: 2026/10/28 15:25:43 by acornia          ###   ########.fr       */
+/*   Updated: 2026/10/29 12:10:09 by acornia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,12 +42,11 @@ static int	parse_array(char **split, t_node **stack)
 	return (1);
 }
 
-int	parse_args(int argc, char **argv, t_node **stack)
+int	parse_args(int argc, char **argv, int start, t_node **stack)
 {
 	char	**split;
 	int		start;
 
-	start = 1;
 	if (argc - start == 1)
 	{
 		split = ft_split(argv[start], ' ');

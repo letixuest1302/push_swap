@@ -6,7 +6,7 @@
 /*   By: acornia <acornia@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/27 13:20:04 by acornia           #+#    #+#             */
-/*   Updated: 2026/10/28 15:25:41 by acornia          ###   ########.fr       */
+/*   Updated: 2026/10/29 12:10:08 by acornia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	free_stack(t_node *stack)
 	t_node	*tmp;
 
 	if (!stack || !*stack)
-		return;
+		return ;
 	while (*stack)
 	{
 		tmp = (*stack)->next;

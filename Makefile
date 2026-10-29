@@ -4,7 +4,7 @@ CC = cc
 
 CFLAGS = -Wall -Wextra -Werror
 
-SRCS = 
+SRCS = adaptative_sort.c error.c is_sorted.c main.c parse_args.c parse.c Push.c ReverseRotate.c Rotate.c simple_sort.c split_utils.c split.c swap.c
 
 OBJS = $(SRCS:.c=.o)
 
