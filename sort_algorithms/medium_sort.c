@@ -6,7 +6,7 @@
 /*   By: acornia & lesainz <acornia@student.42ma    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/29 12:58:05 by acornia           #+#    #+#             */
-/*   Updated: 2026/10/30 12:30:37 by acornia & l      ###   ########.fr       */
+/*   Updated: 2026/10/30 12:52:32 by acornia & l      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,4 +16,33 @@ void	medium_sort(t_node **stack_a, t_node **stack_b)
 {
 	write(1, "Esto es medium\n", 15);
 	simple_sort(stack_a, stack_b);
+}
+
+static int	index_max_pos(t_node *stack)
+{
+	int	max_idx;
+	int	max_pos;
+	int	current_pos;
+	
+	if (!stack)
+		return (0);
+	min_pos = 0;
+	current_pos = 0;
+	max_idx = stack->index;
+	while (stack)
+	{
+		if (stack->index > max_idx)
+		{
+			max_idx = stack->index;
+			max_pos = current_pos;
+		}
+		stack = stack->next;
+		current_pos++;
+	}
+	return (max_pos);
+}
+
+static void push_chunks(t_node **stack_a, t_node **stack_b, int chunk)
+{
+	
 }

@@ -6,7 +6,7 @@
 /*   By: acornia & lesainz <acornia@student.42ma    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/29 11:43:55 by lesainz           #+#    #+#             */
-/*   Updated: 2026/10/30 12:30:35 by acornia & l      ###   ########.fr       */
+/*   Updated: 2026/10/30 12:48:38 by acornia & l      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,11 @@ static int	index_min_pos(t_node *stack)
 	int	min_pos;
 	int	current_pos;
 
-	min_idx = stack->index;
+	if (!stack)
+		return (0);
 	min_pos = 0;
 	current_pos = 0;
+	min_idx = stack->index;
 	while (stack)
 	{
 		if (stack->index < min_idx)
