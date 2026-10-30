@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   adaptative_sort.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acornia <acornia@student.42madrid.com>     +#+  +:+       +#+        */
+/*   By: acornia & lesainz <acornia@student.42ma    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/28 15:39:15 by acornia           #+#    #+#             */
-/*   Updated: 2026/10/29 15:56:57 by acornia          ###   ########.fr       */
+/*   Updated: 2026/10/30 12:30:40 by acornia & l      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 

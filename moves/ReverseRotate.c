@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ReverseRotate.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acornia <acornia@student.42madrid.com>     +#+  +:+       +#+        */
+/*   By: acornia & lesainz <acornia@student.42ma    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/27 11:52:15 by acornia           #+#    #+#             */
-/*   Updated: 2026/10/29 16:08:22 by acornia          ###   ########.fr       */
+/*   Updated: 2026/10/30 12:30:54 by acornia & l      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
