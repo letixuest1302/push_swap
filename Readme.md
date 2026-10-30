@@ -17,3 +17,9 @@ Para compilar debes
 ## Recursos 
 * **Recursos:** Para comprender la lógica de las operaciones, la gestión de pilas y los distintos algoritmos de ordenación aplicables a este proyecto, puedes consultar los siguientes recursos 
 * **Uso de la IA:**Se usó la AI de forma moderada, como apoyo para programar las funciones, entender la lógica interna de cada función y comprobaciones de compilación. 
+
+## Algoritmos
+**simple:** Métodos simples de extracción del mínimo/máximo 
+**medium:** Orden basado en chunks (dividiendo en √n chunks)
+**complex:** 
+**adaptative:**
