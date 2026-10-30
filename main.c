@@ -6,12 +6,13 @@
 /*   By: lesainz <lesainz@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/26 11:43:36 by acornia           #+#    #+#             */
-/*   Updated: 2026/10/29 14:45:59 by lesainz          ###   ########.fr       */
+/*   Updated: 2026/10/29 16:20:44 by lesainz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <stdio.h>
+
 
 static int	is_flag(char *flag)
 {
