@@ -1,4 +1,4 @@
-*Este proyecto ha sido creado como parte del currículo de 42 por lesainz y acornia*
+*Este proyecto ha sido creado como parte del currículo de 42 por acornia y lesainz*
 
 ## Descripción
 
