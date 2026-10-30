@@ -16,10 +16,10 @@ Para compilar debes
 
 ## Recursos 
 * **Recursos:** Para comprender la lógica de las operaciones, la gestión de pilas y los distintos algoritmos de ordenación aplicables a este proyecto, puedes consultar los siguientes recursos 
-* **Uso de la IA:**Se usó la AI de forma moderada, como apoyo para programar las funciones, entender la lógica interna de cada función y comprobaciones de compilación. 
+* **Uso de la IA:** Se usó la AI de forma moderada, como apoyo para programar las funciones, entender la lógica interna de cada función y comprobaciones de compilación. 
 
 ## Algoritmos
-**simple:** Métodos simples de extracción del mínimo/máximo 
+**simple:** Métodos simples de extracción del mínimo/máximo. Lo lleva al stack b mediante rotaciones y la instrucción pb de forma repetida hasta vaciar el stack a (o dejar los 3 elementos base). Luego en el stack b los devuelve al stack a ordenados mediante la instrucción pa. 
 **medium:** Orden basado en chunks (dividiendo en √n chunks)
 **complex:** 
 **adaptative:**
