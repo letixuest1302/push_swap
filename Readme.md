@@ -20,6 +20,9 @@ Para compilar debes
 
 ## Algoritmos
 **simple:** Métodos simples de extracción del mínimo/máximo. Lo lleva al stack b mediante rotaciones y la instrucción pb de forma repetida hasta vaciar el stack a (o dejar los 3 elementos base). Luego en el stack b los devuelve al stack a ordenados mediante la instrucción pa. 
-**medium:** Orden basado en chunks (dividiendo en √n chunks)
+**medium:** Orden basado en chunks (dividiendo en √n chunks):
+1. **División en bloques:** Se agrupan los números normalizados en $k$ rangos (o *chunks*) de tamaño fijo
+2. **Envío a la pila B:** Se recorre la pila `a` buscando los elementos que pertenecen al bloque activo y se pasan a la pila `b` mediante la instrucción `pb` (optimizando las rotaciones con `ra` o `rra`). 
+3. **Devolución ordenada a la pila A:** Una vez que todos los datos están en la pila `b`, se busca de forma iterativa el **valor máximo**, se lleva a la cima de la pila más rápido posible y se devuelve a la pila `a` con `pa` hasta dejarla completamente ordenada.
 **complex:** 
 **adaptative:**
