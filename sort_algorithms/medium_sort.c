@@ -6,7 +6,7 @@
 /*   By: acornia & lesainz <acornia@student.42ma    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/29 12:58:05 by acornia           #+#    #+#             */
-/*   Updated: 2026/10/30 12:52:32 by acornia & l      ###   ########.fr       */
+/*   Updated: 2026/10/30 14:25:43 by acornia & l      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,5 +44,23 @@ static int	index_max_pos(t_node *stack)
 
 static void push_chunks(t_node **stack_a, t_node **stack_b, int chunk)
 {
-	
+	int	pushed;
+
+	pushed = 0;
+	while (*stack_a)
+	{
+		if ((*stack_a)->index <= pushed)
+		{
+			pb(stack_a, stack_b);
+			rb(stack_b);
+			pushed++;
+		}
+		else if ((*stack_a)->index <= (pushed + chunk))
+		{
+			pb(stack_a, stack_b);
+			pushed++;
+		}
+		else
+			ra(stack_a);
+	}
 }
