@@ -6,7 +6,7 @@
 /*   By: acornia & lesainz <acornia@student.42ma    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/27 12:29:01 by acornia           #+#    #+#             */
-/*   Updated: 2026/11/03 13:15:36 by acornia & l      ###   ########.fr       */
+/*   Updated: 2026/11/03 15:32:54 by acornia & l      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,26 @@ typedef struct s_node
 	int				index;
 	struct s_node	*next;
 }	t_node;
+
+typedef struct	s_bench
+{
+	int		enabled;
+	float	disorder;
+	char	*strategy;
+	char	*complexity;
+	int		sa;
+	int		sb;
+	int		ss;
+	int		pa;
+	int		pb;
+	int		ra;
+	int		rb;
+	int		rr;
+	int		rra;
+	int		rrb;
+	int		rrr;
+	int		total_ops;
+}	t_bench;
 
 /*Operaciones Swap*/
 void	sa(t_node **stack_a);
@@ -66,5 +86,12 @@ int		index_min_pos(t_node *stack);
 int		stack_size(t_node *stack);
 void	sort_three(t_node **stack_a);
 int		ft_strcmp(const char *flag, const char *str);
+/*Herramientas para el bench*/
+void	ft_putstr(char *str, int fd);
+void	ft_putnbr_fd(int n, int fd);
+void	print_bench(t_bench *bench);
+/*Herramientas del main*/
+int	handle_args(int argc, char **argv, t_node **stack, char **flag, t_bench *bench);
+
 
 #endif

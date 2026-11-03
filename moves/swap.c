@@ -6,7 +6,7 @@
 /*   By: acornia & lesainz <acornia@student.42ma    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/27 10:52:24 by acornia           #+#    #+#             */
-/*   Updated: 2026/11/03 11:20:42 by acornia & l      ###   ########.fr       */
+/*   Updated: 2026/11/03 14:47:04 by acornia & l      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,22 @@ void	sa(t_node **stack_a)
 {
 	if (swap(stack_a))
 		write(1, "sa\n", 3);
+	if (bench && bench->enabled)
+	{
+		bench->sa++;
+		bench->total_ops++;
+	}
 }
 
 void	sb(t_node **stack_b)
 {
 	if (swap(stack_b))
 		write(1, "sb\n", 3);
+	if (bench && bench->enabled)
+	{
+		bench->sb++;
+		bench->total_ops++;
+	}
 }
 
 void	ss(t_node **stack_a, t_node **stack_b)
@@ -49,8 +59,9 @@ void	ss(t_node **stack_a, t_node **stack_b)
 	done_b = swap(stack_b);
 	if (done_a && done_b)
 		write(1, "ss\n", 3);
-	else if (done_a)
-		write(1, "sa\n", 3);
-	else if (done_b)
-		write(1, "sb\n", 3);
+	if (bench && bench->enabled)
+	{
+		bench->ss++;
+		bench->total_ops++;
+	}
 }

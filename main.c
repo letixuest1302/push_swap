@@ -6,45 +6,19 @@
 /*   By: acornia & lesainz <acornia@student.42ma    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/26 11:43:36 by acornia           #+#    #+#             */
-/*   Updated: 2026/11/03 13:11:56 by acornia & l      ###   ########.fr       */
+/*   Updated: 2026/11/03 15:33:30 by acornia & l      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include <stdio.h>
 
-static int	is_flag(char *flag)
-{
-	if (!flag)
-		return (0);
-	if (!ft_strcmp(flag, "--simple") || !ft_strcmp(flag, "--medium")
-		|| !ft_strcmp(flag, "--complex") || !ft_strcmp(flag, "--adaptive"))
-		return (1);
-	return (0);
-}
-
-static int	handle_args(int argc, char **argv, t_node **stack, char **flag)
-{
-	int	start;
-
-	start = 1;
-	if (is_flag(argv[1]))
-	{
-		*flag = argv[1];
-		start = 2;
-	}
-	if (start >= argc)
-		return (0);
-	if (!parse_args(argc, argv, start, stack))
-		return (0);
-	return (1);
-}
-
 int	main(int argc, char **argv)
 {
 	t_node	*stack_a;
 	t_node	*stack_b;
 	char	*flag;
+	t_bench	bench;
 
 	if (argc < 2)
 		return (0);
@@ -55,7 +29,7 @@ int	main(int argc, char **argv)
 		return (error(stack_a, NULL));
 	assign_index(stack_a);
 	if (!is_sorted(stack_a))
-		adaptative_sort(&stack_a, &stack_b, flag);
+		adaptative_sort(&stack_a, &stack_b, flag, &bench);
 	free_stack(stack_a);
 	free_stack(stack_b);
 	return (0);

@@ -6,7 +6,7 @@
 /*   By: acornia & lesainz <acornia@student.42ma    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/27 11:13:28 by acornia           #+#    #+#             */
-/*   Updated: 2026/10/30 12:30:55 by acornia & l      ###   ########.fr       */
+/*   Updated: 2026/11/03 14:45:29 by acornia & l      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,11 @@ void	pa(t_node **stack_a, t_node **stack_b)
 	node_to_move->next = *stack_a;
 	*stack_a = node_to_move;
 	write(1, "pa\n", 3);
+	if (bench && bench->enabled)
+	{
+		bench->pa++;
+		bench->total_ops++;
+	}
 }
 
 void	pb(t_node **stack_a, t_node **stack_b)
@@ -36,4 +41,9 @@ void	pb(t_node **stack_a, t_node **stack_b)
 	node_to_move->next = *stack_b;
 	*stack_b = node_to_move;
 	write(1, "pb\n", 3);
+	if (bench && bench->enabled)
+	{
+		bench->pb++;
+		bench->total_ops++;
+	}
 }
