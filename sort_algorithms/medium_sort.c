@@ -6,13 +6,13 @@
 /*   By: acornia & lesainz <acornia@student.42ma    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/29 12:58:05 by acornia           #+#    #+#             */
-/*   Updated: 2026/11/03 10:34:20 by acornia & l      ###   ########.fr       */
+/*   Updated: 2026/11/03 11:21:21 by acornia & l      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-static void push_chunks(t_node **stack_a, t_node **stack_b, int chunk)
+static void	push_chunks(t_node **stack_a, t_node **stack_b, int chunk)
 {
 	int	pushed;
 

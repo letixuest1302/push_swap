@@ -6,7 +6,7 @@
 /*   By: acornia & lesainz <acornia@student.42ma    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/27 10:52:24 by acornia           #+#    #+#             */
-/*   Updated: 2026/10/30 12:30:51 by acornia & l      ###   ########.fr       */
+/*   Updated: 2026/11/03 11:20:42 by acornia & l      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	ss(t_node **stack_a, t_node **stack_b)
 {
 	int	done_a;
 	int	done_b;
-	
+
 	done_a = swap(stack_a);
 	done_b = swap(stack_b);
 	if (done_a && done_b)

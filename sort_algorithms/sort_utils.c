@@ -6,7 +6,7 @@
 /*   By: acornia & lesainz <acornia@student.42ma    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/03 10:08:19 by acornia & l       #+#    #+#             */
-/*   Updated: 2026/11/03 10:22:23 by acornia & l      ###   ########.fr       */
+/*   Updated: 2026/11/03 11:21:00 by acornia & l      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	index_max_pos(t_node *stack)
 	int	max_idx;
 	int	max_pos;
 	int	current_pos;
-	
+
 	if (!stack)
 		return (0);
 	max_pos = 0;
