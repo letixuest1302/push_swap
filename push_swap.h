@@ -6,7 +6,7 @@
 /*   By: acornia & lesainz <acornia@student.42ma    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/27 12:29:01 by acornia           #+#    #+#             */
-/*   Updated: 2026/11/03 10:21:53 by acornia & l      ###   ########.fr       */
+/*   Updated: 2026/11/03 13:15:36 by acornia & l      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,5 +65,6 @@ int		index_max_pos(t_node *stack);
 int		index_min_pos(t_node *stack);
 int		stack_size(t_node *stack);
 void	sort_three(t_node **stack_a);
+int		ft_strcmp(const char *flag, const char *str);
 
 #endif

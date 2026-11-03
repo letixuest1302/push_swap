@@ -6,13 +6,11 @@
 /*   By: acornia & lesainz <acornia@student.42ma    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/28 15:39:15 by acornia           #+#    #+#             */
-/*   Updated: 2026/11/03 10:11:41 by acornia & l      ###   ########.fr       */
+/*   Updated: 2026/11/03 13:12:25 by acornia & l      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
-
-int	ft_strcmp(const char *flag, const char *str);
 
 static	void	adaptative(t_node **stack_a, t_node **stack_b)
 {
@@ -37,8 +35,6 @@ void	adaptative_sort(t_node **stack_a, t_node **stack_b, char *flag)
 		medium_sort(stack_a, stack_b);
 	else if (flag && ft_strcmp(flag, "--complex") == 0)
 		complex_sort(stack_a, stack_b);
-	else if (flag && ft_strcmp(flag, "--adaptative") == 0)
-		adaptative(stack_a, stack_b);
 	else
 		adaptative(stack_a, stack_b);
 }

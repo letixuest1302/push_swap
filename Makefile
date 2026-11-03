@@ -1,10 +1,10 @@
-NAME = push_swap.a
+NAME = push_swap
 
 CC = cc
 
 CFLAGS = -Wall -Wextra -Werror
 
-SRCS = moves/Push.c moves/ReverseRotate.c moves/Rotate.c moves/swap.c \
+SRCS = moves/Push.c moves/ReverseRotate.c moves/Rotate.c moves/swap.c main.c \
 	sort_algorithms/adaptative_sort.c sort_algorithms/complex_sort.c sort_algorithms/medium_sort.c sort_algorithms/simple_sort.c \
 	split/split_utils.c split/split.c parser/error.c parser/is_sorted.c parser/parse_args.c parser/parse.c sort_algorithms/sort_utils.c
 
@@ -13,7 +13,7 @@ OBJS = $(SRCS:.c=.o)
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	ar rcs $(NAME) $(OBJS)
+	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 
 %.o: %.c
 	$(CC) $(CFLAGS) -c $< -o $@
