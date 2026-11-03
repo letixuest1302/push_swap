@@ -6,14 +6,47 @@
 /*   By: acornia & lesainz <acornia@student.42ma    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/29 13:00:59 by acornia           #+#    #+#             */
-/*   Updated: 2026/11/03 10:27:38 by acornia & l      ###   ########.fr       */
+/*   Updated: 2026/11/03 12:07:43 by acornia & l      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
+static int	get_max_bits(t_node *stack)
+{
+	int	max_bits;
+	int	max_index;
+
+	max_index = stack_size(stack) - 1;
+	max_bits = 0;
+	while ((max_index >> max_bits) > 0)
+		max_bits++;
+	return (max_bits);
+}
+
 void	complex_sort(t_node **stack_a, t_node **stack_b)
 {
-	write(1, "esto es complex\n", 16);
-	medium_sort(stack_a, stack_b);
+	int	i;
+	int	j;
+	int	size;
+	int	max_bits;
+
+	i = 0;
+	max_bits = get_max_bits(*stack_a);
+	while (i < max_bits)
+	{
+		j = 0;
+		size = stack_size(*stack_a);
+		while (j < size)
+		{
+			if (((*stack_a)->index >> i) & 1)
+				ra(stack_a);
+			else
+				pb(stack_a, stack_b);
+			j++;
+		}
+		while (*stack_b)
+			pa(stack_a, stack_b);
+		i++;
+	}
 }
