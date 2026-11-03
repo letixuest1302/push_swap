@@ -26,6 +26,12 @@ Para compilar debes
 2. **Envío a la pila B:** Se recorre la pila `a` buscando los elementos que pertenecen al bloque activo y se pasan a la pila `b` mediante la instrucción `pb` (optimizando las rotaciones con `ra` o `rra`). 
 3. **Devolución ordenada a la pila A:** Una vez que todos los datos están en la pila `b`, se busca de forma iterativa el **valor máximo**, se lleva a la cima de la pila más rápido posible y se devuelve a la pila `a` con `pa` hasta dejarla completamente ordenada.
 
-**complex:** 
+**complex:** Pensado para listas grandes o con un índice de desorden alto, implementa un enfoque optimizado basado en el **Turk Algorithm** o particionamiento avanzado:
+* **Cálculo de Costes:** Evalúa de manera dinámica el coste en movimientos (rotaciones combinadas como `rr` o `rrr`) de cada elemento de la pila `A` para insertarlo en la posición óptima de la pila `B`.
+* **Inserción y Retorno:** Minimiza drásticamente el número total de operaciones para asegurar una complejidad temporal de $O(n \log n)$.
 
-**adaptative:**
+
+**adaptative:** El programa calcula el **índice de desorden** de la pila de entrada *antes de realizar ningún movimiento* para seleccionar automáticamente la estrategia más eficiente:
+* **Desorden Bajo (< 0.2):** Emplea movimientos directos y rápidos orientados a secuencias casi ordenadas.
+* **Desorden Medio ($0.2 \le \text{desorden} < 0.5$):** Aplica el algoritmo intermedio basado en **chunks** ($O(n\sqrt{n})$).
+* **Desorden Alto ($\ge 0.5$):** Activa de forma automática el **algoritmo complejo** ($O(n \log n)$) para garantizar el rendimiento óptimo ante conjuntos caóticos.
