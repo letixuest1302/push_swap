@@ -6,7 +6,7 @@
 /*   By: acornia & lesainz <acornia@student.42ma    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/30 12:30:52 by acornia & l       #+#    #+#             */
-/*   Updated: 2026/11/03 14:46:44 by acornia & l      ###   ########.fr       */
+/*   Updated: 2026/11/03 15:39:16 by acornia & l      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ static int	rotate(t_node **stack)
 	return (1);
 }
 
-void	ra(t_node **stack_a)
+void	ra(t_node **stack_a, t_bench *bench)
 {
 	if (rotate(stack_a))
 		write(1, "ra\n", 3);
@@ -40,7 +40,7 @@ void	ra(t_node **stack_a)
 	}
 }
 
-void	rb(t_node **stack_b)
+void	rb(t_node **stack_b, t_bench *bench)
 {
 	if (rotate(stack_b))
 		write(1, "rb\n", 3);
@@ -51,7 +51,7 @@ void	rb(t_node **stack_b)
 	}
 }
 
-void	rr(t_node **stack_a, t_node **stack_b)
+void	rr(t_node **stack_a, t_node **stack_b, t_bench *bench)
 {
 	int	done_a;
 	int	done_b;

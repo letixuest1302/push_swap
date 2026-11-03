@@ -6,11 +6,13 @@
 /*   By: acornia & lesainz <acornia@student.42ma    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/03 15:25:07 by acornia & l       #+#    #+#             */
-/*   Updated: 2026/11/03 15:32:47 by acornia & l      ###   ########.fr       */
+/*   Updated: 2026/11/03 15:49:27 by acornia & l      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+static void	init_bench(t_bench *bench);
 
 int	handle_args(int argc, char **argv, t_node **stack, char **flag, t_bench *bench)
 {

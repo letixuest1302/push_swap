@@ -6,13 +6,13 @@
 /*   By: acornia & lesainz <acornia@student.42ma    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/27 11:13:28 by acornia           #+#    #+#             */
-/*   Updated: 2026/11/03 14:45:29 by acornia & l      ###   ########.fr       */
+/*   Updated: 2026/11/03 15:38:52 by acornia & l      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-void	pa(t_node **stack_a, t_node **stack_b)
+void	pa(t_node **stack_a, t_node **stack_b, t_bench *bench)
 {
 	t_node	*node_to_move;
 
@@ -30,7 +30,7 @@ void	pa(t_node **stack_a, t_node **stack_b)
 	}
 }
 
-void	pb(t_node **stack_a, t_node **stack_b)
+void	pb(t_node **stack_a, t_node **stack_b, t_bench *bench)
 {
 	t_node	*node_to_move;
 

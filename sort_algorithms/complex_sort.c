@@ -6,7 +6,7 @@
 /*   By: acornia & lesainz <acornia@student.42ma    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/29 13:00:59 by acornia           #+#    #+#             */
-/*   Updated: 2026/11/03 12:30:19 by acornia & l      ###   ########.fr       */
+/*   Updated: 2026/11/03 15:46:42 by acornia & l      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static int	get_max_bits(t_node *stack)
 	return (max_bits);
 }
 
-void	complex_sort(t_node **stack_a, t_node **stack_b)
+void	complex_sort(t_node **stack_a, t_node **stack_b, t_bench *bench)
 {
 	int	i;
 	int	j;
@@ -40,13 +40,13 @@ void	complex_sort(t_node **stack_a, t_node **stack_b)
 		while (j < size)
 		{
 			if (((*stack_a)->index >> i) & 1)
-				ra(stack_a);
+				ra(stack_a, bench);
 			else
-				pb(stack_a, stack_b);
+				pb(stack_a, stack_b, bench);
 			j++;
 		}
 		while (*stack_b)
-			pa(stack_a, stack_b);
+			pa(stack_a, stack_b, bench);
 		i++;
 	}
 }

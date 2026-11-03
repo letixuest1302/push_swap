@@ -6,11 +6,11 @@
 /*   By: acornia & lesainz <acornia@student.42ma    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/03 14:47:30 by acornia & l       #+#    #+#             */
-/*   Updated: 2026/11/03 15:09:15 by acornia & l      ###   ########.fr       */
+/*   Updated: 2026/11/03 15:52:32 by acornia & l      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../push_swap.h"
 
 static void	print_disorder(float disorder)
 {
@@ -24,9 +24,9 @@ static void	print_disorder(float disorder)
 	ft_putnbr_fd(int_part, 2);
 	ft_putstr_fd(".", 2);
 	if (dec_part < 10)
-		ft_putstr("0", 2);
+		ft_putstr_fd("0", 2);
 	ft_putnbr_fd(dec_part, 2);
-	ft_putstr_fd("%\n", 2;)
+	ft_putstr_fd("%\n", 2);
 }
 
 static void	print_ops_details(t_bench *bench)
@@ -41,7 +41,7 @@ static void	print_ops_details(t_bench *bench)
 	ft_putnbr_fd(bench->pa, 2);
 	ft_putstr_fd(" pb: ", 2);
 	ft_putnbr_fd(bench->pb, 2);
-	ft_putstr_fd("[bench] ra: ", 2);
+	ft_putstr_fd("\n[bench] ra: ", 2);
 	ft_putnbr_fd(bench->ra, 2);
 	ft_putstr_fd(" rb: ", 2);
 	ft_putnbr_fd(bench->rb, 2);
@@ -60,7 +60,7 @@ void	print_bench(t_bench *bench)
 {
 	if (!bench || !bench->enabled)
 		return ;
-	ft_putstr("[bench] disorder: ", 2);
+	ft_putstr_fd("[bench] disorder: ", 2);
 	print_disorder(bench->disorder);
 	ft_putstr_fd("[bench] strategy: ", 2);
 	ft_putstr_fd(bench->strategy, 2);
@@ -68,11 +68,11 @@ void	print_bench(t_bench *bench)
 	ft_putstr_fd(bench->complexity, 2);
 	ft_putstr_fd("\n[bench] total_ops: ",2);
 	ft_putnbr_fd(bench->total_ops, 2);
-	ft_putstr_fd("\n", 2)
+	ft_putstr_fd("\n", 2);
 	print_ops_details(bench);
 }
 
-void	ft_putstr(char *str, int fd)
+void	ft_putstr_fd(char *str, int fd)
 {
 	int	i;
 	
