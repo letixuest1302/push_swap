@@ -6,7 +6,7 @@
 /*   By: acornia & lesainz <acornia@student.42ma    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/29 13:00:59 by acornia           #+#    #+#             */
-/*   Updated: 2026/10/30 12:30:38 by acornia & l      ###   ########.fr       */
+/*   Updated: 2026/11/03 10:27:38 by acornia & l      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,5 @@
 void	complex_sort(t_node **stack_a, t_node **stack_b)
 {
 	write(1, "esto es complex\n", 16);
-	simple_sort(stack_a, stack_b);
+	medium_sort(stack_a, stack_b);
 }

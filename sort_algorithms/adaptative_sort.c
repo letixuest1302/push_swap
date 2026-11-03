@@ -6,7 +6,7 @@
 /*   By: acornia & lesainz <acornia@student.42ma    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/28 15:39:15 by acornia           #+#    #+#             */
-/*   Updated: 2026/10/30 12:30:40 by acornia & l      ###   ########.fr       */
+/*   Updated: 2026/11/03 10:11:41 by acornia & l      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static	void	adaptative(t_node **stack_a, t_node **stack_b)
 		complex_sort(stack_a, stack_b);
 }
 
-void	sort_stack(t_node **stack_a, t_node **stack_b, char *flag)
+void	adaptative_sort(t_node **stack_a, t_node **stack_b, char *flag)
 {
 	if (!stack_a || !*stack_a)
 		return ;

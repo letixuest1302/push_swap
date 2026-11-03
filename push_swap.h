@@ -6,7 +6,7 @@
 /*   By: acornia & lesainz <acornia@student.42ma    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/27 12:29:01 by acornia           #+#    #+#             */
-/*   Updated: 2026/10/30 12:30:30 by acornia & l      ###   ########.fr       */
+/*   Updated: 2026/11/03 10:21:53 by acornia & l      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,17 +48,22 @@ void	free_split(char	**split);
 float	disorder_index(t_node *stack);
 int		is_sorted(t_node *stack);
 /*Parseo*/
-int		parse_args(int argc, char **argv, int start, t_node **stack);
 void	assign_index(t_node *stack_a);
+int		parse_args(int argc, char **argv, int start, t_node **stack);
 /*Comprobacion de argumentos*/
-void	sort_stack(t_node **stack_a, t_node **stack_b, char *flag);
 int		numbers(char *str);
 long	ft_atol(const char *str);
 int		duplicate(t_node *stack, int n);
 int		add_back(t_node **stack, int n);
 /*Algoritmos de ordenacion*/
+void	adaptative_sort(t_node **stack_a, t_node **stack_b, char *flag);
 void	simple_sort(t_node **stack_a, t_node **stack_b);
 void	medium_sort(t_node **stack_a, t_node **stack_b);
 void	complex_sort(t_node **stack_a, t_node **stack_b);
+/*Herramientas para los algoritmos*/
+int		index_max_pos(t_node *stack);
+int		index_min_pos(t_node *stack);
+int		stack_size(t_node *stack);
+void	sort_three(t_node **stack_a);
 
 #endif

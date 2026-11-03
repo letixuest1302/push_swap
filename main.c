@@ -6,7 +6,7 @@
 /*   By: acornia & lesainz <acornia@student.42ma    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/26 11:43:36 by acornia           #+#    #+#             */
-/*   Updated: 2026/10/30 12:30:34 by acornia & l      ###   ########.fr       */
+/*   Updated: 2026/11/03 10:35:56 by acornia & l      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,12 +55,7 @@ int	main(int argc, char **argv)
 		return (error(stack_a, NULL));
 	assign_index(stack_a);
 	if (!is_sorted(stack_a))
-		sort_stack(&stack_a, &stack_b, flag);
-	while (stack_a)
-	{
-		printf("%d\n", stack_a->value);
-		stack_a = stack_a->next;
-	}
+		adaptative_sort(&stack_a, &stack_b, flag);
 	free_stack(stack_a);
 	free_stack(stack_b);
 	return (0);

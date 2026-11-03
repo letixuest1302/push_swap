@@ -6,50 +6,11 @@
 /*   By: acornia & lesainz <acornia@student.42ma    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/29 11:43:55 by lesainz           #+#    #+#             */
-/*   Updated: 2026/10/30 12:48:38 by acornia & l      ###   ########.fr       */
+/*   Updated: 2026/11/03 10:09:28 by acornia & l      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
-
-void	sort_three(t_node **stack_a);
-
-int	stack_size(t_node *stack)
-{
-	int	size;
-
-	size = 0;
-	while (stack)
-	{
-		size++;
-		stack = stack->next;
-	}
-	return (size);
-}
-
-static int	index_min_pos(t_node *stack)
-{
-	int	min_idx;
-	int	min_pos;
-	int	current_pos;
-
-	if (!stack)
-		return (0);
-	min_pos = 0;
-	current_pos = 0;
-	min_idx = stack->index;
-	while (stack)
-	{
-		if (stack->index < min_idx)
-		{
-			min_idx = stack->index;
-			min_pos = current_pos;
-		}
-		stack = stack->next;
-		current_pos++;
-	}
-	return (min_pos);
-}
 
 static void	min_to_top(t_node **stack_a)
 {

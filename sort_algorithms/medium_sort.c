@@ -6,41 +6,11 @@
 /*   By: acornia & lesainz <acornia@student.42ma    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/29 12:58:05 by acornia           #+#    #+#             */
-/*   Updated: 2026/10/30 14:25:43 by acornia & l      ###   ########.fr       */
+/*   Updated: 2026/11/03 10:34:20 by acornia & l      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
-
-void	medium_sort(t_node **stack_a, t_node **stack_b)
-{
-	write(1, "Esto es medium\n", 15);
-	simple_sort(stack_a, stack_b);
-}
-
-static int	index_max_pos(t_node *stack)
-{
-	int	max_idx;
-	int	max_pos;
-	int	current_pos;
-	
-	if (!stack)
-		return (0);
-	min_pos = 0;
-	current_pos = 0;
-	max_idx = stack->index;
-	while (stack)
-	{
-		if (stack->index > max_idx)
-		{
-			max_idx = stack->index;
-			max_pos = current_pos;
-		}
-		stack = stack->next;
-		current_pos++;
-	}
-	return (max_pos);
-}
 
 static void push_chunks(t_node **stack_a, t_node **stack_b, int chunk)
 {
@@ -63,4 +33,47 @@ static void push_chunks(t_node **stack_a, t_node **stack_b, int chunk)
 		else
 			ra(stack_a);
 	}
+}
+
+static void	push_back(t_node **stack_a, t_node **stack_b)
+{
+	int	max_pos;
+	int	size;
+
+	while (*stack_b)
+	{
+		max_pos = index_max_pos(*stack_b);
+		size = stack_size(*stack_b);
+		if (max_pos <= size / 2)
+		{
+			while (max_pos > 0)
+			{
+				rb(stack_b);
+				max_pos--;
+			}
+		}
+		else
+		{
+			while (max_pos < size)
+			{
+				rrb(stack_b);
+				max_pos++;
+			}
+		}
+		pa(stack_a, stack_b);
+	}
+}
+
+void	medium_sort(t_node **stack_a, t_node **stack_b)
+{
+	int	size;
+	int	chunk_size;
+
+	size = stack_size(*stack_a);
+	if (size <= 100)
+		chunk_size = 15;
+	else
+		chunk_size = 30;
+	push_chunks(stack_a, stack_b, chunk_size);
+	push_back(stack_a, stack_b);
 }
