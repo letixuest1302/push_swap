@@ -6,7 +6,7 @@
 /*   By: acornia & lesainz <acornia@student.42ma    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/28 15:39:15 by acornia           #+#    #+#             */
-/*   Updated: 2026/11/04 11:09:48 by acornia & l      ###   ########.fr       */
+/*   Updated: 2026/11/04 11:37:29 by acornia & l      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,17 +28,17 @@ static	void	run_adaptative(t_node **stack_a, t_node **stack_b,
 	disorder = disorder_index(*stack_a);
 	if (disorder < 0.2f)
 	{
-		set_bench_info(bench, "Adaptative", "O(n)");
+		set_bench_info(bench, "Adaptive", "O(n)");
 		simple_sort(stack_a, stack_b, bench);
 	}
 	else if (disorder < 0.5f)
 	{
-		set_bench_info(bench, "Adaptative", "O(n√n)");
+		set_bench_info(bench, "Adaptive", "O(n√n)");
 		medium_sort(stack_a, stack_b, bench);
 	}
 	else
 	{
-		set_bench_info(bench, "Adaptative", "O(n log n)");
+		set_bench_info(bench, "Adaptive", "O(n log n)");
 		complex_sort(stack_a, stack_b, bench);
 	}
 }
