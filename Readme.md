@@ -18,6 +18,14 @@ Para compilar debes
 * **Recursos:** Para comprender la lógica de las operaciones, la gestión de pilas y los distintos algoritmos de ordenación aplicables a este proyecto, puedes consultar los siguientes recursos 
 * **Uso de la IA:** Se usó la AI de forma moderada, como apoyo para programar las funciones, entender la lógica interna de cada función y comprobaciones de compilación. 
 
+## Operaciones 
+| Operación | Efecto |
+| :--- | :--- |
+| `sa` / `sb` / `ss` | Intercambia los dos primeros elementos de `a`, de `b` o de ambas. |
+| `pa` / `pb` | Pasa el primer elemento de `b` a `a` (`pa`) o de `a` a `b` (`pb`). |
+| `ra` / `rb` / `rr` | Rotación hacia arriba: el primer elemento pasa a ser el último. |
+| `rra` / `rrb` / `rrr` | Rotación hacia abajo: el último elemento pasa a ser el primero. |
+
 ## Algoritmos
 **simple:** Métodos simples de extracción del mínimo/máximo. Lo lleva al stack b mediante rotaciones y la instrucción pb de forma repetida hasta vaciar el stack a (o dejar los 3 elementos base). Luego en el stack b los devuelve al stack a ordenados mediante la instrucción pa. 
 
@@ -30,8 +38,43 @@ Para compilar debes
 * **Cálculo de Costes:** Evalúa de manera dinámica el coste en movimientos (rotaciones combinadas como `rr` o `rrr`) de cada elemento de la pila `A` para insertarlo en la posición óptima de la pila `B`.
 * **Inserción y Retorno:** Minimiza drásticamente el número total de operaciones para asegurar una complejidad temporal de $O(n \log n)$.
 
+**adaptative:** Antes de mover nada se calcula el **índice de desorden** de la pila: la proporción de parejas de elementos que están en el orden equivocado respecto al total de parejas.
+ 
+```
+desorden = parejas invertidas / parejas totales
+```
+ 
+Va de `0.0` (ordenada) a `1.0` (completamente al revés). Según su valor se elige el algoritmo:
+ 
+| Desorden | Algoritmo | Complejidad |
+| :--- | :--- | :--- |
+| `< 0.2` | Simple | O(n²) |
+| `0.2 ≤ d < 0.5` | Medium (chunks) | O(n√n) |
+| `≥ 0.5` | Complex (radix) | O(n log n) |
 
-**adaptative:** El programa calcula el **índice de desorden** de la pila de entrada *antes de realizar ningún movimiento* para seleccionar automáticamente la estrategia más eficiente:
-* **Desorden Bajo (< 0.2):** Emplea movimientos directos y rápidos orientados a secuencias casi ordenadas.
-* **Desorden Medio ($0.2 \le \text{desorden} < 0.5$):** Aplica el algoritmo intermedio basado en **chunks** ($O(n\sqrt{n})$).
-* **Desorden Alto ($\ge 0.5$):** Activa de forma automática el **algoritmo complejo** ($O(n \log n)$) para garantizar el rendimiento óptimo ante conjuntos caóticos.
+## Esquema del proyecto
+```
+├── Makefile
+├── push_swap.h
+├── main.c                  # Lectura de flags y flujo principal
+├── moves/                  # Las 11 operaciones (sa, pb, ra, rrr...)
+│   ├── swap.c
+│   ├── Push.c
+│   ├── Rotate.c
+│   └── ReverseRotate.c
+├── parser/                 # Validación y carga de la pila
+│   ├── parse_args.c
+│   ├── parse.c
+│   ├── is_sorted.c         # is_sorted y disorder_index
+│   └── error.c             # Error y liberación de memoria
+├── sort_algorithms/        # Los algoritmos de ordenación
+│   ├── adaptative_sort.c
+│   ├── simple_sort.c
+│   ├── medium_sort.c
+│   ├── complex_sort.c
+│   └── sort_utils.c
+└── split/                  # ft_split y funciones auxiliares
+    ├── split.c
+    ├── split_utils.c
+    └── split.h
+```
