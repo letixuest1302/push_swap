@@ -6,7 +6,7 @@
 /*   By: acornia & lesainz <acornia@student.42ma    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/29 11:43:55 by lesainz           #+#    #+#             */
-/*   Updated: 2026/11/04 13:15:12 by acornia & l      ###   ########.fr       */
+/*   Updated: 2026/11/04 14:36:08 by acornia & l      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ void	simple_sort(t_node **stack_a, t_node **stack_b, t_bench *bench)
 		pb(stack_a, stack_b, bench);
 		size--;
 	}
+	sort_three(stack_a, bench);
 	while (*stack_b)
 		pa(stack_a, stack_b, bench);
 }

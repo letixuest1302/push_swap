@@ -6,11 +6,12 @@
 /*   By: acornia & lesainz <acornia@student.42ma    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/26 11:43:36 by acornia           #+#    #+#             */
-/*   Updated: 2026/11/04 11:07:52 by acornia & l      ###   ########.fr       */
+/*   Updated: 2026/11/04 14:37:44 by acornia & l      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <stdio.h>
 
 int	main(int argc, char **argv)
 {
