@@ -43,10 +43,6 @@ Para compilar debes
 
 **Adaptative:** Antes de mover nada se calcula el **índice de desorden** de la pila: la proporción de parejas de elementos que están en el orden equivocado respecto al total de parejas.
  
-```
-desorden = parejas invertidas / parejas totales
-```
- 
 Va de `0.0` (ordenada) a `1.0` (completamente al revés). Según su valor se elige el algoritmo:
  
 | Desorden | Algoritmo | Complejidad |
