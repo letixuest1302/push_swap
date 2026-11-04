@@ -1,7 +1,6 @@
 *Este proyecto ha sido creado como parte del currículo de 42 por acornia y lesainz*
 
 ## Descripción
-
 El proyecto **Push_swap** es un algoritmo de ordenación muy desafiante. Consiste en ordenar una pila de números enteros (`stack a`) utilizando una segunda pila auxiliar (`stack b`) y un conjunto limitado de operaciones, con el objetivo de utilizar el menor número de movimientos posibles.
 
 ## Instrucciones
@@ -18,6 +17,10 @@ Para compilar debes
 * **Recursos:** Para comprender la lógica de las operaciones, la gestión de pilas y los distintos algoritmos de ordenación aplicables a este proyecto, puedes consultar los siguientes recursos 
 * **Uso de la IA:** Se usó la AI de forma moderada, como apoyo para programar las funciones, entender la lógica interna de cada función y comprobaciones de compilación. 
 
+## Contribuciones de cada estudiante
+**Antonio:**: Se encargo de los movimientos, bench utils, Makefile y algoritmos. 
+
+**Leticia(Emily):** Se encargo del parser, readme y algoritmos.
 ## Operaciones 
 | Operación | Efecto |
 | :--- | :--- |
