@@ -8,10 +8,10 @@ El proyecto incluye un `Makefile` con las reglas estándar. Para compilar el pro
 Para compilar debes
 | Comando | Descripción |
 | :--- | :--- |
-| `make` | Compila la parte obligatoria y genera un nuevo archivo llamado 'libft.a'. Todas las funciones programadas en (.c) generan un archivo objeto (.o) correspondiente.|
+| `make` | Compila la parte obligatoria y genera un ejecutable llamado 'push_swap'. Todas las funciones programadas en (.c) generan un archivo objeto (.o) correspondiente.|
 | `make clean` | Elimina todos los archivos objeto (.o) que generamos al ejecutar 'make'. |
-| `make fclean` | Elimina todos los archivos objeto (.o) y la libreria estática(libft.a) que generamos al ejecutar 'make'.|
-| `make re` | Hace una limpieza totall y vueve a compilar todo desde cero.|
+| `make fclean` | Elimina todos los archivos objeto (.o) y el ejecutable (push_swap) que generamos al ejecutar 'make'.|
+| `make re` | Hace una limpieza total y vueve a compilar todo desde cero.|
 
 ## Recursos 
 * **Recursos:** Para comprender la lógica de las operaciones, la gestión de pilas y los distintos algoritmos de ordenación aplicables a este proyecto, puedes consultar los siguientes recursos 
@@ -30,14 +30,20 @@ Para compilar debes
 | `rra` / `rrb` / `rrr` | Rotación hacia abajo: el último elemento pasa a ser el primero. |
 
 ## Algoritmos
-**Simple:** Métodos simples de extracción del mínimo/máximo. Lo lleva al stack b mediante rotaciones y la instrucción pb de forma repetida hasta vaciar el stack a (o dejar los 3 elementos base). Luego en el stack b los devuelve al stack a ordenados mediante la instrucción pa. 
+**Simple:** Métodos simples de extracción del mínimo/máximo.
+1. Se fija en el número con mayor índice.
+2. Lo lleva al stack b mediante rotaciones y la instrucción pb de forma repetida hasta vaciar el stack a (o dejar los 3 elementos base).
+3. Luego en el stack b los devuelve al stack a ordenados mediante la instrucción pa. 
 
 **Medium:** Orden basado en chunks (dividiendo en √n chunks):
 1. **División en bloques:** Se agrupan los números normalizados en $k$ rangos (o *chunks*) de tamaño fijo
 2. **Envío a la pila B:** Se recorre la pila `a` buscando los elementos que pertenecen al bloque activo y se pasan a la pila `b` mediante la instrucción `pb` (optimizando las rotaciones con `ra` o `rra`). 
 3. **Devolución ordenada a la pila A:** Una vez que todos los datos están en la pila `b`, se busca de forma iterativa el **valor máximo**, se lleva a la cima de la pila más rápido posible y se devuelve a la pila `a` con `pa` hasta dejarla completamente ordenada.
 
-**Complex:** Pensado para listas grandes o con un índice de desorden alto, implementa un enfoque optimizado basado en el **Readix (LSD)**. 
+**Complex:** Pensado para listas grandes o con un índice de desorden alto, implementa un enfoque optimizado basado en el **Radix (LSD)**.
+1. Calcula la cantidad de bits necesaria.
+2. Realiza un bucle fijandose bit a bit agrupandolos si los bits son 1 o 0.
+3. Repetimos el bucle hasta que este ordenado. 
 
 **Adaptative:** Antes de mover nada se calcula el **índice de desorden** de la pila: la proporción de parejas de elementos que están en el orden equivocado respecto al total de parejas.
  
