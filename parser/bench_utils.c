@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   bench_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acornia & lesainz <acornia@student.42ma    +#+  +:+       +#+        */
+/*   By: lesainz <lesainz@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/03 14:47:30 by acornia & l       #+#    #+#             */
-/*   Updated: 2026/11/03 15:52:32 by acornia & l      ###   ########.fr       */
+/*   Updated: 2026/11/04 10:52:51 by lesainz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ void	print_bench(t_bench *bench)
 	ft_putstr_fd(bench->strategy, 2);
 	ft_putstr_fd(" / ", 2);
 	ft_putstr_fd(bench->complexity, 2);
-	ft_putstr_fd("\n[bench] total_ops: ",2);
+	ft_putstr_fd("\n[bench] total_ops: ", 2);
 	ft_putnbr_fd(bench->total_ops, 2);
 	ft_putstr_fd("\n", 2);
 	print_ops_details(bench);
@@ -75,7 +75,7 @@ void	print_bench(t_bench *bench)
 void	ft_putstr_fd(char *str, int fd)
 {
 	int	i;
-	
+
 	if (!str)
 		return ;
 	i = 0;
@@ -98,4 +98,3 @@ void	ft_putnbr_fd(int n, int fd)
 	c = (n % 10) + '0';
 	write(fd, &c, 1);
 }
-

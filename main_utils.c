@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main_utils.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acornia & lesainz <acornia@student.42ma    +#+  +:+       +#+        */
+/*   By: lesainz <lesainz@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/11/03 15:25:07 by acornia & l       #+#    #+#             */
-/*   Updated: 2026/11/03 15:49:27 by acornia & l      ###   ########.fr       */
+/*   Updated: 2026/11/04 10:54:05 by lesainz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,8 @@
 
 static void	init_bench(t_bench *bench);
 
-int	handle_args(int argc, char **argv, t_node **stack, char **flag, t_bench *bench)
+int	handle_args(int argc, char **argv, t_node **stack,
+		char **flag, t_bench *bench)
 {
 	int	start;
 
@@ -25,9 +26,9 @@ int	handle_args(int argc, char **argv, t_node **stack, char **flag, t_bench *ben
 		if (ft_strcmp(argv[start], "--bench") == 0)
 			bench->enabled = 1;
 		else if (ft_strcmp(argv[start], "--simple") == 0
-				|| ft_strcmp(argv[start], "--medium") == 0
-				|| ft_strcmp(argv[start], "--complex") == 0
-				|| ft_strcmp(argv[start], "--adaptive") == 0)
+			|| ft_strcmp(argv[start], "--medium") == 0
+			|| ft_strcmp(argv[start], "--complex") == 0
+			|| ft_strcmp(argv[start], "--adaptive") == 0)
 			*flag = argv[start];
 		else
 			break ;

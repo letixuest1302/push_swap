@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   adaptative_sort.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acornia & lesainz <acornia@student.42ma    +#+  +:+       +#+        */
+/*   By: lesainz <lesainz@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/28 15:39:15 by acornia           #+#    #+#             */
-/*   Updated: 2026/11/03 15:47:53 by acornia & l      ###   ########.fr       */
+/*   Updated: 2026/11/04 10:52:23 by lesainz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ static void	set_bench_info(t_bench *bench, char *strategy, char *complexity)
 	bench->complexity = complexity;
 }
 
-static	void	run_adaptative(t_node **stack_a, t_node **stack_b, t_bench *bench)
+static	void	run_adaptative(t_node **stack_a, t_node **stack_b,
+					t_bench *bench)
 {
 	float	disorder;
 
@@ -42,7 +43,8 @@ static	void	run_adaptative(t_node **stack_a, t_node **stack_b, t_bench *bench)
 	}
 }
 
-void	select_algorithm(t_node **stack_a, t_node **stack_b, char *flag, t_bench *bench)
+void	select_algorithm(t_node **stack_a, t_node **stack_b,
+			char *flag, t_bench *bench)
 {
 	float	disorder;
 
@@ -68,7 +70,8 @@ void	select_algorithm(t_node **stack_a, t_node **stack_b, char *flag, t_bench *b
 		run_adaptative(stack_a, stack_b, bench);
 }
 
-void	adaptative_sort(t_node **stack_a, t_node **stack_b, char *flag, t_bench *bench)
+void	adaptative_sort(t_node **stack_a, t_node **stack_b,
+			char *flag, t_bench *bench)
 {
 	if (!stack_a || !*stack_a)
 		return ;

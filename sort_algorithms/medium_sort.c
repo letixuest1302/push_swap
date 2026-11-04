@@ -3,16 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   medium_sort.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acornia & lesainz <acornia@student.42ma    +#+  +:+       +#+        */
+/*   By: lesainz <lesainz@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/29 12:58:05 by acornia           #+#    #+#             */
-/*   Updated: 2026/11/03 15:46:20 by acornia & l      ###   ########.fr       */
+/*   Updated: 2026/11/04 10:52:38 by lesainz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../push_swap.h"
 
-static void	push_chunks(t_node **stack_a, t_node **stack_b, int chunk, t_bench *bench)
+static void	push_chunks(t_node **stack_a, t_node **stack_b,
+				int chunk, t_bench *bench)
 {
 	int	pushed;
 

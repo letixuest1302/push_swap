@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acornia & lesainz <acornia@student.42ma    +#+  +:+       +#+        */
+/*   By: lesainz <lesainz@student.42madrid.com>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/27 12:29:01 by acornia           #+#    #+#             */
-/*   Updated: 2026/11/03 15:49:01 by acornia & l      ###   ########.fr       */
+/*   Updated: 2026/11/04 10:53:32 by lesainz          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ typedef struct s_node
 	struct s_node	*next;
 }	t_node;
 
-typedef struct	s_bench
+typedef struct s_bench
 {
 	int		enabled;
 	float	disorder;
@@ -76,7 +76,8 @@ long	ft_atol(const char *str);
 int		duplicate(t_node *stack, int n);
 int		add_back(t_node **stack, int n);
 /*Algoritmos de ordenacion*/
-void	adaptative_sort(t_node **stack_a, t_node **stack_b, char *flag, t_bench *bench);
+void	adaptative_sort(t_node **stack_a, t_node **stack_b,
+			char *flag, t_bench *bench);
 void	simple_sort(t_node **stack_a, t_node **stack_b, t_bench *bench);
 void	medium_sort(t_node **stack_a, t_node **stack_b, t_bench *bench);
 void	complex_sort(t_node **stack_a, t_node **stack_b, t_bench *bench);
@@ -91,7 +92,7 @@ void	ft_putstr_fd(char *str, int fd);
 void	ft_putnbr_fd(int n, int fd);
 void	print_bench(t_bench *bench);
 /*Herramientas del main*/
-int	handle_args(int argc, char **argv, t_node **stack, char **flag, t_bench *bench);
-
+int		handle_args(int argc, char **argv, t_node **stack,
+			char **flag, t_bench *bench);
 
 #endif
