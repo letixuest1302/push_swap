@@ -37,9 +37,7 @@ Para compilar debes
 2. **Envío a la pila B:** Se recorre la pila `a` buscando los elementos que pertenecen al bloque activo y se pasan a la pila `b` mediante la instrucción `pb` (optimizando las rotaciones con `ra` o `rra`). 
 3. **Devolución ordenada a la pila A:** Una vez que todos los datos están en la pila `b`, se busca de forma iterativa el **valor máximo**, se lleva a la cima de la pila más rápido posible y se devuelve a la pila `a` con `pa` hasta dejarla completamente ordenada.
 
-**Complex:** Pensado para listas grandes o con un índice de desorden alto, implementa un enfoque optimizado basado en el **Turk Algorithm** o particionamiento avanzado:
-* **Cálculo de Costes:** Evalúa de manera dinámica el coste en movimientos (rotaciones combinadas como `rr` o `rrr`) de cada elemento de la pila `A` para insertarlo en la posición óptima de la pila `B`.
-* **Inserción y Retorno:** Minimiza drásticamente el número total de operaciones para asegurar una complejidad temporal de $O(n \log n)$.
+**Complex:** Pensado para listas grandes o con un índice de desorden alto, implementa un enfoque optimizado basado en el **Readix (LSD)**. 
 
 **Adaptative:** Antes de mover nada se calcula el **índice de desorden** de la pila: la proporción de parejas de elementos que están en el orden equivocado respecto al total de parejas.
  
