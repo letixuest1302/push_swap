@@ -6,7 +6,7 @@
 /*   By: acornia & lesainz <acornia@student.42ma    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/27 13:20:04 by acornia           #+#    #+#             */
-/*   Updated: 2026/11/06 12:45:37 by acornia & l      ###   ########.fr       */
+/*   Updated: 2026/11/06 16:24:28 by acornia & l      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,15 +29,16 @@ void	free_stack(t_node *stack)
 
 void	free_split(char	**split)
 {
-	int	i;
+	char	**temp;
 
 	if (!split)
 		return ;
-	i = 0;
-	while (split[i])
+	temp = split;
+	while (*temp)
 	{
-		free(split[i]);
-		i++;
+		free(*temp);
+		*temp = NULL;
+		temp++;
 	}
 	free(split);
 }

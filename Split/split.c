@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   split.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: acornia <acornia@student.42madrid.com>     +#+  +:+       +#+        */
+/*   By: acornia & lesainz <acornia@student.42ma    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/10/27 12:32:21 by acornia           #+#    #+#             */
-/*   Updated: 2026/10/29 12:12:08 by acornia          ###   ########.fr       */
+/*   Updated: 2026/11/06 16:25:40 by acornia & l      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ static void	free_array(char **tab, int i)
 	{
 		i--;
 		free(tab[i]);
+		tab[i] = NULL;
 	}
 	free(tab);
 }
